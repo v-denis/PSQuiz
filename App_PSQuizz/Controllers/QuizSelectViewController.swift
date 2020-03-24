@@ -26,6 +26,11 @@ class QuizSelectViewController: UIViewController {
 		configurationVC()
 	}
 	
+}
+
+
+//MARK: - custom methods for current VC
+extension QuizSelectViewController {
 	
 	private func configurationVC() {
 		
@@ -70,7 +75,24 @@ class QuizSelectViewController: UIViewController {
 		
 		Helper.shared.addSubviews(views: [mainLabel, pizzaImageView, sushiImageView, versusLabel, pizzaQuizButton, sushiQuizButton], to: self.view)
 	}
+}
+
+//MARK: - protocol methods realisation
+extension QuizSelectViewController: OpenResultVCProtocol {
+
+	func presentResultVC(with type: QuestionType, count: Int) {
+		let resultVC = ResultQuizViewController()
+		resultVC.resultType = type
+		resultVC.resultPoints = count
+		resultVC.modalPresentationStyle = .fullScreen
+		self.present(resultVC, animated: true, completion: nil)
+	}
 	
+	
+}
+
+//MARK: - custom selectors for current VC
+extension QuizSelectViewController {
 	
 	@objc private func goToQuizVC(_ sender: UIButton) {
 		let quizVC = QuizViewController()
@@ -90,22 +112,4 @@ class QuizSelectViewController: UIViewController {
 			self.present(quizVC, animated: true, completion: nil)
 		}
 	}
-	
-	
 }
-
-
-extension QuizSelectViewController: OpenResultVCProtocol {
-
-	func presentResultVC(with type: QuestionType, count: Int) {
-		let resultVC = ResultQuizViewController()
-		resultVC.resultType = type
-		resultVC.resultPoints = count
-		resultVC.modalPresentationStyle = .fullScreen
-		self.present(resultVC, animated: true, completion: nil)
-	}
-	
-	
-}
-
-
