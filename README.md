@@ -1,5 +1,9 @@
-# PSQuiz
-A little funny quiz-game to determine pizza and rolls on Russian :)
 
-![Gif #1](psQuiz_gif1.gif)    ![Gif #2](psQuiz_gif2.gif)    ![Gif #3](psQuiz_gif3.gif)
+### PSQuiz
+**A little funny quiz-game to determine pizza and rolls on Russian :)**
 
+<p align="center">
+    <img src="psQuiz_gif1.gif" height="500" align="left">
+    <img height="500" src="psQuiz_gif2.gif">
+    <img src="psQuiz_gif3.gif" height="500" align="right">
+</p> 
